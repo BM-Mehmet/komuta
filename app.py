@@ -1334,8 +1334,6 @@ class KomutaWindow(QMainWindow):
                 self.cancel_edit_clip()
             else:
                 self.hide()
-        elif event.key() in (Qt.Key.Key_Return, Qt.Key.Key_Enter):
-            self.activate_item(self.list.currentItem())
         elif event.key() == Qt.Key.Key_Down and not self.list.hasFocus():
             self.list.setFocus()
             if self.list.currentRow() < 0:

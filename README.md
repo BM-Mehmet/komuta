@@ -19,7 +19,7 @@ Kaldırmak için `./uninstall.sh` çalıştır. Bu, kısayol ve oturum kayıtlar
 
 - `Alt+Boşluk`: pano geçmişi penceresini aç/kapat (KDE Plasma kurulumundan sonra).
 - Arama kutusu: pano kayıtlarında, uygulamalarda ve taranan klasörlerde arama yap.
-- Dosya sonucunu seç: sağ panelde görsel veya metin önizlemesi gösterilir; dosyayı açmak için Enter'a bas.
+- Dosya veya dizin sonucuna tek tıkla: sağ panelde önizlemesini göster. Çift tıklama ya da Enter dosya veya dizini açar.
 - Enter: pano kaydını kopyala; uygulamayı başlat; dosyayı varsayılan uygulamayla aç.
 - Bağlantılar ve görseller otomatik kategorilenir. Pano kaydına sağ tık: kategoriyi değiştir, sabitle, kopyala veya sil.
 - `+` veya `Ctrl+Shift+N`: yeni pano kategorisi ekle.
