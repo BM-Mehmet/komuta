@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-`app.py` contains the PyQt6 desktop application and its D-Bus toggle endpoint. `launch.sh` starts it, and `install.sh` adds KDE Plasma shortcut and session startup entries. `README.md` documents user setup. Runtime clipboard data is stored outside the repository under `~/.local/state/komuta/`.
+`app.py` contains the minimal terminal-style PyQt6 desktop application and its D-Bus toggle endpoint. `launch.sh` starts it, and `install.sh` adds KDE Plasma shortcut and session startup entries. `README.md` documents user setup. Runtime clipboard data is stored outside the repository under `~/.local/state/komuta/`.
 
 ## Build, Test, and Development Commands
 
