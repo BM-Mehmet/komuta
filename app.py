@@ -288,8 +288,9 @@ class KomutaWindow(QMainWindow):
         nav_row.addWidget(self._nav_button("PANO", "all"))
         nav_row.addWidget(self._nav_button("UYGULAMA", "apps"))
         nav_row.addWidget(self._nav_button("DOSYA", "files"))
+        nav_row.addStretch()
         nav_row.addSpacing(12)
-        category_label = QLabel("KATEGORİ:")
+        category_label = QLabel("KATEGORİLER:")
         category_label.setObjectName("dimText")
         nav_row.addWidget(category_label)
         self.category_layout = nav_row
