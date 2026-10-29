@@ -286,7 +286,7 @@ class KomutaWindow(QMainWindow):
         nav_row = QHBoxLayout()
         nav_row.setSpacing(5)
         nav_row.addWidget(self._nav_button("PANO", "all"))
-        nav_row.addWidget(self._nav_button("APP", "apps"))
+        nav_row.addWidget(self._nav_button("UYGULAMA", "apps"))
         nav_row.addWidget(self._nav_button("DOSYA", "files"))
         nav_row.addSpacing(12)
         category_label = QLabel("KATEGORİ:")
