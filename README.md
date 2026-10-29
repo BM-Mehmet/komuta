@@ -11,7 +11,7 @@ sudo pacman -S python-pyqt6
 ./install.sh
 ```
 
-`install.sh`, kullanıcı uygulama menüsüne gizli bir kısayol ve oturum başlangıç girdisi ekler; KDE Plasma'da Alt+Boşluk kısayolunu ayarlar. Kısayol başka bir eylemde kullanılıyorsa Plasma'nın Kısayollar ayarlarından Komuta'ya ata. KDE kısayolu, açık uygulamaya D-Bus isteği gönderir; her tuş basışında yeni bir Komuta/Python süreci oluşturmaz. Başka masaüstlerinde uygulamayı `./launch.sh` ile başlat. Kaynak klasörünü taşımak kurulu kısayolları bozar; taşıdıktan sonra kurulum betiğini yeniden çalıştır.
+`install.sh`, uygulama menüsünde Komuta kısayolunu ve oturum başlangıç girdisini oluşturur; KDE Plasma'da Alt+Boşluk kısayolunu ayarlar. Kısayol başka bir eylemde kullanılıyorsa Plasma'nın Kısayollar ayarlarından Komuta'ya ata. KDE kısayolu, açık uygulamaya D-Bus isteği gönderir; her tuş basışında yeni bir Komuta/Python süreci oluşturmaz. Başka masaüstlerinde uygulamayı `./launch.sh` ile başlat. Kaynak klasörünü taşımak kurulu kısayolları bozar; taşıdıktan sonra kurulum betiğini yeniden çalıştır.
 
 Kaldırmak için `./uninstall.sh` çalıştır. Bu, kısayol ve oturum kayıtlarını siler; pano geçmişini ve kaynak klasörünü korur. Pano geçmişini de silmek için `./uninstall.sh --purge-data` kullan. Uygulama açıksa kaldırmadan önce tepsi menüsünden çıkış yap; kaynak klasörünü tamamen kaldırmak için klasörü ayrıca sil.
 

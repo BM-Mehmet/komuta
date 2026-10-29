@@ -14,11 +14,14 @@ elif [[ $# -gt 0 ]]; then
 fi
 
 rm -f "$DATA_HOME/applications/komuta.desktop"
+rm -f "$DATA_HOME/applications/komuta-shortcut.desktop"
 rm -f "$DATA_HOME/dbus-1/services/org.komuta.Launcher.service"
 rm -f "$CONFIG_HOME/autostart/komuta.desktop"
 
 if command -v kwriteconfig6 >/dev/null 2>&1; then
     kwriteconfig6 --file kglobalshortcutsrc --group services --group komuta.desktop \
+        --key _launch --delete ''
+    kwriteconfig6 --file kglobalshortcutsrc --group services --group komuta-shortcut.desktop \
         --key _launch --delete ''
     command -v kbuildsycoca6 >/dev/null 2>&1 && kbuildsycoca6 --noincremental >/dev/null
 fi

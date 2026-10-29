@@ -24,6 +24,16 @@ cat > "$APP_DIRS/komuta.desktop" <<EOF
 Type=Application
 Name=Komuta
 Comment=Pano geçmişi ve hızlı arama
+Exec=$APP_DIR/launch.sh --toggle
+Icon=edit-paste
+StartupNotify=false
+EOF
+
+cat > "$APP_DIRS/komuta-shortcut.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=Komuta Shortcut
+Comment=Komuta global kısayolu
 Exec=$TOGGLE_COMMAND
 Icon=edit-paste
 NoDisplay=true
@@ -49,6 +59,8 @@ EOF
 
 if command -v kwriteconfig6 >/dev/null 2>&1; then
     kwriteconfig6 --file kglobalshortcutsrc --group services --group komuta.desktop \
+        --key _launch --delete ''
+    kwriteconfig6 --file kglobalshortcutsrc --group services --group komuta-shortcut.desktop \
         --key _launch "Alt+Space,Alt+Space,Komuta'yı aç"
     command -v kbuildsycoca6 >/dev/null 2>&1 && kbuildsycoca6 --noincremental >/dev/null
 fi
