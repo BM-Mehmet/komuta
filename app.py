@@ -1286,12 +1286,21 @@ class KomutaWindow(QMainWindow):
                 QMessageBox.information(self, "Kategori mevcut", "Bu isimde bir kategori zaten var.")
 
     def clear_history(self):
-        answer = QMessageBox.question(self, "Pano geçmişini temizle", "Sabitlediklerin dışındaki tüm kayıtlar silinsin mi?",
-                                      QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        if answer == QMessageBox.StandardButton.Yes:
+        dialog = QMessageBox(self)
+        dialog.setWindowTitle("Pano geçmişini temizle")
+        dialog.setText("Hangi kayıtları silmek istiyorsun?")
+        clear_all = dialog.addButton("Tümünü sil", QMessageBox.ButtonRole.DestructiveRole)
+        clear_unpinned = dialog.addButton("Sabitlenmemişleri sil", QMessageBox.ButtonRole.ActionRole)
+        dialog.addButton(QMessageBox.StandardButton.Cancel)
+        dialog.exec()
+        if dialog.clickedButton() == clear_all:
+            self.db.execute("DELETE FROM clips")
+        elif dialog.clickedButton() == clear_unpinned:
             self.db.execute("DELETE FROM clips WHERE pinned=0")
-            self.db.commit()
-            self.refresh()
+        else:
+            return
+        self.db.commit()
+        self.refresh()
 
     def show_launcher(self):
         if self.isVisible():

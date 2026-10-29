@@ -23,7 +23,9 @@ if command -v kwriteconfig6 >/dev/null 2>&1; then
         --key _launch --delete ''
     kwriteconfig6 --file kglobalshortcutsrc --group services --group komuta-shortcut.desktop \
         --key _launch --delete ''
-    command -v kbuildsycoca6 >/dev/null 2>&1 && kbuildsycoca6 --noincremental >/dev/null
+    if command -v kbuildsycoca6 >/dev/null 2>&1; then
+        kbuildsycoca6 --noincremental >/dev/null 2>&1 || true
+    fi
 fi
 
 if [[ "$PURGE_DATA" == true ]]; then
@@ -31,6 +33,7 @@ if [[ "$PURGE_DATA" == true ]]; then
     printf 'Komuta kaldırıldı; pano geçmişi ve uygulama verileri silindi.\n'
 else
     printf 'Komuta kısayol ve oturum kayıtları kaldırıldı. Pano geçmişi korundu: %s/komuta\n' "$STATE_HOME"
-    printf 'Kaynak klasörü silinmedi. Uygulama açıksa tepsi menüsünden çıkış yap.\n'
+    printf 'Kaynak kod bu klasörde kaldı: %s\n' "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+    printf 'Uygulama hâlâ açıksa tepsi menüsünden çıkış yap.\n'
     printf 'Pano geçmişini de silmek için: %s --purge-data\n' "$0"
 fi
